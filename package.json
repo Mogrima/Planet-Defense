@@ -4,8 +4,12 @@
   "description": "---\r Анализ прошел успешно: контакт с врагом подтвержден. Похоже наши лазары запускают клеточный митоз у этого вида. Что это значит? Если мы выстрелим в них, они разделяться на множество более мелких существ. Значит, сначала мы должны разделить их и нацелиться на клонов.",
   "main": "srcipt.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint"
   },
   "author": "Mogrima",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.56.0"
+  }
 }
