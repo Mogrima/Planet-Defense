@@ -30,4 +30,9 @@ export class Player {
             this.radius) * this.aim[1];
         this.angle = Math.atan2(this.aim[3], this.aim[2]);
     }
+
+    shoot() {
+        const projectile = this.game.getProjectile();
+        if (projectile) projectile.start(this.x, this.y, this.aim[0], this.aim[1]);
+    }
 }
