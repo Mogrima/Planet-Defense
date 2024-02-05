@@ -5,6 +5,7 @@ export class Player {
         this.y = this.game.height * 0.5;
         this.radius = 40;
         this.image = document.getElementById('player');
+        this.aim;
     }
 
     draw(context) {
@@ -14,5 +15,11 @@ export class Player {
         context.stroke();
     }
 
-    update() {}
+    update() {
+        this.aim = this.game.calcAim(this.game.mouse, this.game.planet);
+        this.x = this.game.planet.x + (this.game.planet.radius +
+            this.radius) * this.aim[0];
+        this.y = this.game.planet.y + (this.game.planet.radius +
+            this.radius) * this.aim[1];
+    }
 }
