@@ -1,4 +1,5 @@
 import { Planet } from './Planet.js';
+import { Player } from './Player.js';
 
 export class Game {
     constructor(canvas) {
@@ -7,6 +8,7 @@ export class Game {
         this.height = this.canvas.height;
         
         this.planet = new Planet(this);
+        this.player = new Player(this);
 
         this.mouse = {
             x: 0,
@@ -21,6 +23,8 @@ export class Game {
 
     render(context) {
         this.planet.draw(context);
+        this.player.draw(context);
+        this.player.update();
         context.beginPath();
         context.moveTo(this.planet.x, this.planet.y);
         context.lineTo(this.mouse.x, this.mouse.y);
