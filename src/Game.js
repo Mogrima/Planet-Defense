@@ -12,7 +12,7 @@ export class Game {
         this.player = new Player(this);
 
         this.projectilePool = [];
-        this.numberOfProjectiles = 5;
+        this.numberOfProjectiles = 30;
         this.createprojectilePool();
 
         this.mouse = {
