@@ -79,4 +79,10 @@ export class Game {
             this.enemyPool.push( new Enemy(this) );
         }
     }
+
+    getEnemy() {
+        for (let i = 0; i < this.enemyPool.length; i++) {
+            if (this.enemyPool[i].free) return this.enemyPool[i];
+        }
+    }
 }
