@@ -19,6 +19,9 @@ export class Game {
         this.enemyPool = [];
         this.numberOfEnemies = 30;
         this.createEnemyPool();
+        this.enemyPool[0].start();
+        this.enemyTimer = 0;
+        this.enemyInterval = 1000;
 
         this.mouse = {
             x: 0,
@@ -55,6 +58,15 @@ export class Game {
             enemy.draw(context);
             enemy.update();
         })
+
+        if (this.enemyTimer < this.enemyInterval) {
+            this.enemyTimer += deltaTime;
+        } else {
+            this.enemyTimer = 0;
+            const enemy = this.getEnemy();
+            if (enemy) enemy.start();
+            
+        }
     }
 
     calcAim(a, b) {
