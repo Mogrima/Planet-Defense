@@ -43,7 +43,7 @@ export class Game {
         });
     }
 
-    render(context) {
+    render(context, deltaTime) {
         this.planet.draw(context);
         this.player.draw(context);
         this.player.update();
