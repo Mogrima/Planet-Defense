@@ -28,6 +28,11 @@ export class Projectile {
         if (!this.free) {
             this.x += this.speedX;
             this.y += this.speedY;
+
+            if (this.x < 0 || this.x > this.game.width ||
+                this.y < 0 || this.y > this.game.height) {
+                    this.reset();
+                }
         }
     }
 }
