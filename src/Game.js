@@ -66,6 +66,14 @@ export class Game {
         return [ aimX, aimY, dx, dy ];
     }
 
+    checkCollision(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const distance = Math.hypot(dx, dy);
+        const sumofRadii = a.radius + b.radius;
+        return distance < sumofRadii;
+    }
+
     createprojectilePool() {
         for (let i = 0; i < this.numberOfProjectiles; i++) {
             this.projectilePool.push( new Projectile(this) );
