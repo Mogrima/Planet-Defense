@@ -13,6 +13,8 @@ export class Enemy {
 
     start() {
         this.free = false;
+        this.x = Math.random() * this.game.width;
+        this.y = Math.random() * this.game.height;
     }
 
     reset() {
