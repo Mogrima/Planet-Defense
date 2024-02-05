@@ -27,6 +27,12 @@ export class Game {
             this.mouse.y = e.offsetY;
         });
 
+        window.addEventListener('mousedown', e => {
+            this.mouse.x = e.offsetX;
+            this.mouse.y = e.offsetY;
+            this.player.shoot();
+        });
+
         window.addEventListener('keyup', e => {
             if (e.key === 'd') this.debug = !this.debug;
         });
@@ -36,10 +42,10 @@ export class Game {
         this.planet.draw(context);
         this.player.draw(context);
         this.player.update();
-        context.beginPath();
-        context.moveTo(this.planet.x, this.planet.y);
-        context.lineTo(this.mouse.x, this.mouse.y);
-        context.stroke();
+        this.projectilePool.forEach(projectile => {
+            projectile.draw(context);
+            projectile.update();
+        })
     }
 
     calcAim(a, b) {
