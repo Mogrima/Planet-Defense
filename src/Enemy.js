@@ -15,6 +15,9 @@ export class Enemy {
         this.free = false;
         this.x = Math.random() * this.game.width;
         this.y = Math.random() * this.game.height;
+        const aim = this.game.calcAim(this, this.game.planet);
+        this.speedX = aim[0];
+        this.speedY = aim[1];
     }
 
     reset() {
