@@ -10,10 +10,14 @@ export class Player {
     }
 
     draw(context) {
-        context.drawImage(this.image, this.x - this.radius, this.y - this.radius);
+        context.save();
+        context.translate(this.x, this.y);
+        context.rotate(this.angle);
+        context.drawImage(this.image, -this.radius, -this.radius);
         context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        context.arc(0, 0, this.radius, 0, Math.PI * 2);
         context.stroke();
+        context.restore();
     }
 
     update() {
