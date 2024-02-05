@@ -1,6 +1,7 @@
 import { Planet } from './Planet.js';
 import { Player } from './Player.js';
 import { Projectile } from './Projectile.js';
+import { Enemy } from './Enemy.js';
 
 export class Game {
     constructor(canvas) {
@@ -14,6 +15,10 @@ export class Game {
         this.projectilePool = [];
         this.numberOfProjectiles = 30;
         this.createprojectilePool();
+
+        this.enemyPool = [];
+        this.numberOfEnemies = 30;
+        this.createEnemyPool();
 
         this.mouse = {
             x: 0,
@@ -66,6 +71,12 @@ export class Game {
     getProjectile() {
         for (let i = 0; i < this.projectilePool.length; i++) {
             if (this.projectilePool[i].free) return this.projectilePool[i];
+        }
+    }
+
+    createEnemyPool() {
+        for (let i = 0; i < this.numberOfEnemies; i++) {
+            this.enemyPool.push( new Enemy(this) );
         }
     }
 }
