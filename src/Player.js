@@ -6,6 +6,7 @@ export class Player {
         this.radius = 40;
         this.image = document.getElementById('player');
         this.aim;
+        this.angle = 0;
     }
 
     draw(context) {
@@ -21,5 +22,6 @@ export class Player {
             this.radius) * this.aim[0];
         this.y = this.game.planet.y + (this.game.planet.radius +
             this.radius) * this.aim[1];
+        this.angle = Math.atan2(this.aim[3], this.aim[2]);
     }
 }
