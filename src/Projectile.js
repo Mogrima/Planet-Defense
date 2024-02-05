@@ -9,8 +9,12 @@ export class Projectile {
         this.free = true;
     }
 
-    start() {
+    start(x, y, speedX, speedY) {
         this.free = false;
+        this.x = x;
+        this.y = y;
+        this.speedX = speedX;
+        this.speedY = speedY;
     }
 
     reset() {
