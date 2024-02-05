@@ -3,7 +3,7 @@ export class Projectile {
         this.game = game;
         this.x;
         this.y;
-        this.radius = 20;
+        this.radius = 5;
         this.speedX = 1;
         this.speedY = 1;
         this.speedModifier = 5;
