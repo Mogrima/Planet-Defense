@@ -56,4 +56,10 @@ export class Game {
             this.projectilePool.push( new Projectile(this) );
         }
     }
+
+    getProjectile() {
+        for (let i = 0; i < this.projectilePool.length; i++) {
+            if (this.projectilePool[i].free) return this.projectilePool[i];
+        }
+    }
 }
