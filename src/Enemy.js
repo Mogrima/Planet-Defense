@@ -43,6 +43,14 @@ export class Enemy {
                 this.y < 0 || this.y > this.game.height) {
                     this.reset();
                 }
+
+            if (this.game.checkCollision(this, this.game.planet)) {
+                this.reset();
+            }
+
+            if (this.game.checkCollision(this, this.game.player)) {
+                this.reset();
+            }
         }
     }
 }
