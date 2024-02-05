@@ -6,6 +6,7 @@ export class Projectile {
         this.radius = 20;
         this.speedX = 1;
         this.speedY = 1;
+        this.speedModifier = 5;
         this.free = true;
     }
 
@@ -13,8 +14,8 @@ export class Projectile {
         this.free = false;
         this.x = x;
         this.y = y;
-        this.speedX = speedX;
-        this.speedY = speedY;
+        this.speedX = speedX * this.speedModifier;
+        this.speedY = speedY * this.speedModifier;
     }
 
     reset() {
