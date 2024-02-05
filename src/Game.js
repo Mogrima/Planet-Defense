@@ -51,6 +51,10 @@ export class Game {
             projectile.draw(context);
             projectile.update();
         })
+        this.enemyPool.forEach(enemy => {
+            enemy.draw(context);
+            enemy.update();
+        })
     }
 
     calcAim(a, b) {
