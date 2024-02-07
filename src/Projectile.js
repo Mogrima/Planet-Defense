@@ -40,8 +40,8 @@ export class Projectile {
 
             if (this.x < 0 || this.x > this.game.width ||
                 this.y < 0 || this.y > this.game.height) {
-                    this.reset();
-                }
+                this.reset();
+            }
         }
     }
 }

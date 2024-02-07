@@ -18,11 +18,11 @@ export class Enemy {
         this.free = false;
         this.collided = false;
         if (Math.random() < 0.5) {
-            this.x = Math.random() * this.game.width
-            this.y = Math.random() < 0.5 ? -this.radius : this.game.height + this.radius
+            this.x = Math.random() * this.game.width;
+            this.y = Math.random() < 0.5 ? -this.radius : this.game.height + this.radius;
         } else {
-            this.x = Math.random() < 0.5 ? -this.radius : this.game.width + this.radius
-            this.y = Math.random() * this.game.height
+            this.x = Math.random() < 0.5 ? -this.radius : this.game.width + this.radius;
+            this.y = Math.random() * this.game.height;
         }
         const aim = this.game.calcAim(this, this.game.planet);
         this.speedX = aim[0] * this.speedModifier;
@@ -48,7 +48,7 @@ export class Enemy {
             context.rotate(this.angle);
             context.drawImage(this.image,
                 this.frameX * this.width, this.frameY * this.height,
-                this.width, this.height, 
+                this.width, this.height,
                 -this.radius, -this.radius, this.width, this.height);
             if (this.game.debug) {
                 context.beginPath();
@@ -84,10 +84,10 @@ export class Enemy {
             this.game.projectilePool.forEach(projectile => {
                 if (!projectile.free &&
                     this.game.checkCollision(this, projectile) && this.lives >= 1) {
-                        projectile.reset();
-                        this.hit(1);
+                    projectile.reset();
+                    this.hit(1);
                 }
-            })
+            });
             if (this.lives < 1 && this.game.spriteUpdate) {
                 this.frameX++;
             }

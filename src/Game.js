@@ -11,7 +11,7 @@ export class Game {
         this.canvas = canvas;
         this.width = this.canvas.width;
         this.height = this.canvas.height;
-        
+
         this.planet = new Planet(this);
         this.player = new Player(this);
 
@@ -37,8 +37,8 @@ export class Game {
 
         this.mouse = {
             x: 0,
-            y: 0
-        }
+            y: 0,
+        };
 
         this.debug = true;
 
@@ -66,11 +66,11 @@ export class Game {
         this.projectilePool.forEach(projectile => {
             projectile.draw(context);
             projectile.update();
-        })
+        });
         this.enemyPool.forEach(enemy => {
             enemy.draw(context);
             enemy.update();
-        })
+        });
 
         if (!this.gameOver) {
             if (this.enemyTimer < this.enemyInterval) {
@@ -79,7 +79,7 @@ export class Game {
                 this.enemyTimer = 0;
                 const enemy = this.getEnemy();
                 if (enemy) enemy.start();
-                
+
             }
         }
 
@@ -129,7 +129,7 @@ export class Game {
         const distance = Math.hypot(dx, dy);
         const aimX = dx / distance * -1;
         const aimY = dy / distance * -1;
-        return [ aimX, aimY, dx, dy ];
+        return [aimX, aimY, dx, dy];
     }
 
     checkCollision(a, b) {
@@ -142,7 +142,7 @@ export class Game {
 
     createprojectilePool() {
         for (let i = 0; i < this.numberOfProjectiles; i++) {
-            this.projectilePool.push( new Projectile(this) );
+            this.projectilePool.push(new Projectile(this));
         }
     }
 
@@ -154,15 +154,15 @@ export class Game {
 
     createEnemyPool() {
         for (let i = 0; i < this.numberOfEnemies; i++) {
-            let randomize = Math.random();
+            const randomize = Math.random();
             if (randomize < 0.25) {
-                this.enemyPool.push( new Asteroid(this) );
+                this.enemyPool.push(new Asteroid(this));
             } else if (randomize < 0.5) {
-                this.enemyPool.push( new Beetlemorph(this) );
+                this.enemyPool.push(new Beetlemorph(this));
             } else if (randomize < 0.75) {
-                this.enemyPool.push( new Rhinomorph(this) );
+                this.enemyPool.push(new Rhinomorph(this));
             } else {
-                this.enemyPool.push( new Lobstermorph(this) );
+                this.enemyPool.push(new Lobstermorph(this));
             }
         }
     }
