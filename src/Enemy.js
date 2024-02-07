@@ -92,6 +92,11 @@ export class Enemy {
                 this.frameX++;
             }
             if (this.frameX > this.maxFrame) {
+                if (this.collided) {
+                    this.game.sound.hitExplosion();
+                } else {
+                    this.game.sound.explosion();
+                }
                 this.reset();
                 if (!this.collided && !this.game.gameOver) this.game.score += this.maxLives;
             }
