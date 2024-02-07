@@ -56,6 +56,7 @@ export class Game {
 
     render(context, deltaTime) {
         this.planet.draw(context);
+        this.drawStatusText(context);
         this.player.draw(context);
         this.player.update();
         this.projectilePool.forEach(projectile => {
@@ -89,6 +90,27 @@ export class Game {
         if (this.score >= this.winningScore) {
             this.gameOver = true;
         }
+    }
+
+    drawStatusText(context) {
+        context.save();
+        context.textAlign = 'left';
+        context.font = '30px Impact';
+        context.fillText('Score: ' + this.score, 20, 30);
+        if (this.gameOver) {
+            context.textAlign = 'center';
+            let message1;
+            let message2;
+            if (this.score >= this.winningScore) {
+                message1 = 'You win!';
+                message2 = 'Your score is ' + this.score + '!';
+            }
+            context.font = '100px Impact';
+            context.fillText(message1, this.width * 0.5, 200);
+            context.font = '50px Impact';
+            context.fillText(message2, this.width * 0.5, 550);
+        }
+        context.restore();
     }
 
     calcAim(a, b) {
