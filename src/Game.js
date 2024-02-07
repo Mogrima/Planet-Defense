@@ -60,7 +60,8 @@ export class Game {
 
         window.addEventListener('keyup', e => {
             if (e.key === 'd') this.debug = !this.debug;
-            if (this.restartKeys.includes(e.key)) this.restart();
+            if (this.restartKeys.includes(e.key) &&
+            this.gameOver ) this.restart();
         });
     }
 
@@ -125,6 +126,8 @@ export class Game {
             context.fillText(message1, this.width * 0.5, 200);
             context.font = '50px Impact';
             context.fillText(message2, this.width * 0.5, 550);
+            context.font = '20px Impact';
+            context.fillText('Press R to restart!', this.width * 0.5, 650);
         }
         context.restore();
     }
