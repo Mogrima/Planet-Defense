@@ -111,6 +111,7 @@ export class Game {
 
         this.energy = this.score;
         if (this.energy >= this.winningScore) {
+            this.sound.сooldownLaser();
             this.laser = true;
             this.gameOver = true;
         }

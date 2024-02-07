@@ -6,6 +6,8 @@ export class SoundController {
         this.explosionEnemy = document.getElementById('explosionEnemy');
         this.hit = document.getElementById('hit');
         this.shot = document.getElementById('shot');
+        this.cooldown = document.getElementById('cooldown');
+        this.cooldownRun = true;
         this.volume = new Volume();
     }
 
@@ -32,5 +34,14 @@ export class SoundController {
         this.shot.currentTime = 0;
         this.shot.volume = this.volume.shotValue / 100;
         this.shot.play();
+    }
+
+    сooldownLaser() {
+        if (this.cooldownRun) {
+            this.cooldownRun = false;
+            this.cooldown.currentTime = 0;
+            this.cooldown.volume = 0.1;
+            this.cooldown.play();
+        }
     }
 }
