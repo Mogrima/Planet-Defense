@@ -64,16 +64,20 @@ export class Enemy {
             this.x += this.speedX;
             this.y += this.speedY;
 
-            if (this.game.checkCollision(this, this.game.planet)) {
+            if (this.game.checkCollision(this, this.game.planet)
+                && this.lives >= 1) {
                 this.lives = 0;
                 this.speedX = 0;
                 this.speedY = 0;
                 this.collided = true;
+                this.game.lives--;
             }
 
-            if (this.game.checkCollision(this, this.game.player)) {
+            if (this.game.checkCollision(this, this.game.player)
+                && this.lives >= 1) {
                 this.lives = 0;
                 this.collided = true;
+                this.game.lives--;
             }
 
             this.game.projectilePool.forEach(projectile => {
