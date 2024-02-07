@@ -2,6 +2,7 @@ import { Planet } from './Planet.js';
 import { Player } from './Player.js';
 import { Projectile } from './Projectile.js';
 import { Asteroid } from './Asteroid.js';
+import { Lobstermorph } from './Lobstermorph.js';
 
 export class Game {
     constructor(canvas) {
@@ -151,7 +152,12 @@ export class Game {
 
     createEnemyPool() {
         for (let i = 0; i < this.numberOfEnemies; i++) {
-            this.enemyPool.push( new Asteroid(this) );
+            let randomize = Math.random();
+            if (randomize > 0.25) {
+                this.enemyPool.push( new Asteroid(this) );
+            } else {
+                this.enemyPool.push( new Lobstermorph(this) );
+            }
         }
     }
 
