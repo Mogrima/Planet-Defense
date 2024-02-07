@@ -4,6 +4,7 @@ import { Projectile } from './Projectile.js';
 import { Asteroid } from './Asteroid.js';
 import { Lobstermorph } from './Lobstermorph.js';
 import { Beetlemorph } from './Beetlemorph.js';
+import { Rhinomorph } from './Rhinomorph.js';
 
 export class Game {
     constructor(canvas) {
@@ -158,6 +159,8 @@ export class Game {
                 this.enemyPool.push( new Asteroid(this) );
             } else if (randomize < 0.5) {
                 this.enemyPool.push( new Beetlemorph(this) );
+            } else if (randomize < 0.75) {
+                this.enemyPool.push( new Rhinomorph(this) );
             } else {
                 this.enemyPool.push( new Lobstermorph(this) );
             }
