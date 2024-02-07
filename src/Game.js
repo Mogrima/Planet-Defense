@@ -88,7 +88,7 @@ export class Game {
             this.spriteTimer = 0;
         }
 
-        if (this.score >= this.winningScore) {
+        if (this.score >= this.winningScore || this.lives < 1) {
             this.gameOver = true;
         }
     }
@@ -108,6 +108,9 @@ export class Game {
             if (this.score >= this.winningScore) {
                 message1 = 'You win!';
                 message2 = 'Your score is ' + this.score + '!';
+            } else {
+                message1 = 'You lose!';
+                message2 = 'Try again!';
             }
             context.font = '100px Impact';
             context.fillText(message1, this.width * 0.5, 200);
