@@ -178,6 +178,7 @@ export class Game {
 
     restart() {
         this.sound.mainSound();
+        this.sound.reset();
         this.gameTime = 0;
         this.projectilePool = [];
         this.createprojectilePool();

@@ -44,4 +44,8 @@ export class SoundController {
             this.cooldown.play();
         }
     }
+
+    reset() {
+        this.cooldownRun = true;
+    }
 }
