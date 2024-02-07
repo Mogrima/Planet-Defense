@@ -32,6 +32,10 @@ export class Enemy {
         this.free = true;
     }
 
+    hit(damage) {
+        this.lives -= damage;
+    }
+
     draw(context) {
         if (!this.free) {
             context.drawImage(this.image,
@@ -63,9 +67,13 @@ export class Enemy {
                 if (!projectile.free &&
                     this.game.checkCollision(this, projectile)) {
                         projectile.reset();
-                        this.reset();
+                        this.hit(1);
                 }
             })
+            if (this.lives < 1) {
+                this.frameX++;
+            }
+            if (this.frameX > this.maxFrame) this.reset();
         }
     }
 }
