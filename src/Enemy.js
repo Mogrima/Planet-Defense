@@ -94,11 +94,17 @@ export class Enemy {
             if (this.frameX > this.maxFrame) {
                 if (this.collided) {
                     this.game.sound.hitExplosion();
+                } else if (this.game.laser && !this.collided) {
+                    this.game.sound.hitExplosion();
                 } else {
                     this.game.sound.explosion();
                 }
                 this.reset();
                 if (!this.collided && !this.game.gameOver) this.game.score += this.maxLives;
+            }
+
+            if (this.game.laser) {
+                this.lives = 0;
             }
         }
     }

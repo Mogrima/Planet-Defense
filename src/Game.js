@@ -38,6 +38,9 @@ export class Game {
         this.gameOver = false;
         this.lives = 10;
 
+        this.laser = false;
+        this.energy = 0;
+
         this.gameTime = 0;
 
         this.mouse = {
@@ -102,7 +105,13 @@ export class Game {
             this.spriteTimer = 0;
         }
 
-        if (this.score >= this.winningScore || this.lives < 1) {
+        if (this.lives < 1) {
+            this.gameOver = true;
+        }
+
+        this.energy = this.score;
+        if (this.energy >= this.winningScore) {
+            this.laser = true;
             this.gameOver = true;
         }
     }
@@ -116,6 +125,13 @@ export class Game {
         for (let i = 0; i < this.lives; i++) {
             context.fillRect(20 + 15 * i, 60, 10, 30);
         }
+        context.save();
+        this.laser ? context.fillStyle = 'gold' :
+            context.fillStyle = 'white';
+        for (let i = 0; i < this.energy; i++) {
+            context.fillRect(20 + 2 * i, 110, 2, 25);
+        }
+        context.restore();
         if (this.gameOver) {
             context.textAlign = 'center';
             let message1;
@@ -165,6 +181,8 @@ export class Game {
         this.score = 0;
         this.gameOver = false;
         this.lives = 10;
+        this.laser = false;
+        this.energy = 0;
         this.mouse = {
             x: 0,
             y: 0,
