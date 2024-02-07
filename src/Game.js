@@ -23,6 +23,10 @@ export class Game {
         this.enemyTimer = 0;
         this.enemyInterval = 1700;
 
+        this.spriteUpdate = false;
+        this.spriteTimer = 0;
+        this.spriteInterval = 150;
+
         this.mouse = {
             x: 0,
             y: 0
@@ -66,6 +70,14 @@ export class Game {
             const enemy = this.getEnemy();
             if (enemy) enemy.start();
             
+        }
+
+        if (this.spriteTimer < this.spriteInterval) {
+            this.spriteTimer += deltaTime;
+            this.spriteUpdate = false;
+        } else {
+            this.spriteUpdate = true;
+            this.spriteTimer = 0;
         }
     }
 
