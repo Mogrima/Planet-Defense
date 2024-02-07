@@ -45,6 +45,8 @@ export class Game {
 
         this.debug = true;
 
+        this.restartKeys = ['r', 'R', 'к', 'К'];
+
         window.addEventListener('mousemove', e => {
             this.mouse.x = e.offsetX;
             this.mouse.y = e.offsetY;
@@ -58,6 +60,7 @@ export class Game {
 
         window.addEventListener('keyup', e => {
             if (e.key === 'd') this.debug = !this.debug;
+            if (this.restartKeys.includes(e.key)) this.restart();
         });
     }
 
@@ -141,6 +144,22 @@ export class Game {
         const distance = Math.hypot(dx, dy);
         const sumofRadii = a.radius + b.radius;
         return distance < sumofRadii;
+    }
+
+    restart() {
+        this.sound.mainSound();
+        this.projectilePool = [];
+        this.createprojectilePool();
+        this.enemyPool = [];
+        this.createEnemyPool();
+        this.enemyPool[0].start();
+        this.score = 0;
+        this.gameOver = false;
+        this.lives = 10;
+        this.mouse = {
+            x: 0,
+            y: 0,
+        };
     }
 
     createprojectilePool() {
