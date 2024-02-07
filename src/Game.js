@@ -1,7 +1,7 @@
 import { Planet } from './Planet.js';
 import { Player } from './Player.js';
 import { Projectile } from './Projectile.js';
-import { Enemy } from './Enemy.js';
+import { Asteroid } from './Asteroid.js';
 
 export class Game {
     constructor(canvas) {
@@ -100,7 +100,7 @@ export class Game {
 
     createEnemyPool() {
         for (let i = 0; i < this.numberOfEnemies; i++) {
-            this.enemyPool.push( new Enemy(this) );
+            this.enemyPool.push( new Asteroid(this) );
         }
     }
 
