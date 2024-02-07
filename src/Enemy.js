@@ -71,14 +71,14 @@ export class Enemy {
                 this.speedX = 0;
                 this.speedY = 0;
                 this.collided = true;
-                this.game.lives--;
+                if (!this.game.gameOver) this.game.lives--;
             }
 
             if (this.game.checkCollision(this, this.game.player)
                 && this.lives >= 1) {
                 this.lives = 0;
                 this.collided = true;
-                this.game.lives--;
+                if (!this.game.gameOver) this.game.lives--;
             }
 
             this.game.projectilePool.forEach(projectile => {
