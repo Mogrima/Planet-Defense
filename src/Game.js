@@ -24,7 +24,7 @@ export class Game {
         this.createEnemyPool();
         this.enemyPool[0].start();
         this.enemyTimer = 0;
-        this.enemyInterval = 800;
+        this.enemyInterval = 1200;
 
         this.spriteUpdate = false;
         this.spriteTimer = 0;
@@ -33,7 +33,7 @@ export class Game {
         this.score = 0;
         this.winningScore = 50;
         this.gameOver = false;
-        this.lives = 30;
+        this.lives = 10;
 
         this.mouse = {
             x: 0,
