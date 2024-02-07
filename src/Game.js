@@ -48,7 +48,7 @@ export class Game {
             y: 0,
         };
 
-        this.debug = true;
+        this.debug = false;
 
         this.restartKeys = ['r', 'R', 'к', 'К'];
 
