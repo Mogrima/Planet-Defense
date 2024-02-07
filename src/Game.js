@@ -22,16 +22,16 @@ export class Game {
         this.createEnemyPool();
         this.enemyPool[0].start();
         this.enemyTimer = 0;
-        this.enemyInterval = 1700;
+        this.enemyInterval = 800;
 
         this.spriteUpdate = false;
         this.spriteTimer = 0;
         this.spriteInterval = 150;
 
         this.score = 0;
-        this.winningScore = 10;
+        this.winningScore = 50;
         this.gameOver = false;
-        this.lives = 5;
+        this.lives = 30;
 
         this.mouse = {
             x: 0,
