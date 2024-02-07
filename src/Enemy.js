@@ -36,6 +36,7 @@ export class Enemy {
 
     hit(damage) {
         this.lives -= damage;
+        if (this.lives >= 1) this.frameX++;
     }
 
     draw(context) {
