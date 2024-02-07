@@ -38,6 +38,8 @@ export class Game {
         this.gameOver = false;
         this.lives = 10;
 
+        this.gameTime = 0;
+
         this.mouse = {
             x: 0,
             y: 0,
@@ -67,6 +69,7 @@ export class Game {
     }
 
     render(context, deltaTime) {
+        if (!this.gameOver) this.gameTime += deltaTime;
         this.planet.draw(context);
         this.drawStatusText(context);
         this.player.draw(context);
@@ -108,6 +111,8 @@ export class Game {
         context.save();
         context.textAlign = 'left';
         context.font = '30px Impact';
+        const formattedTime = (this.gameTime * 0.001).toFixed(1);
+        context.fillText('Timer: ' + formattedTime, 20, 120);
         context.fillText('Score: ' + this.score, 20, 30);
         for (let i = 0; i < this.lives; i++) {
             context.fillRect(20 + 15 * i, 60, 10, 30);
@@ -118,10 +123,10 @@ export class Game {
             let message2;
             if (this.score >= this.winningScore) {
                 message1 = 'You win!';
-                message2 = 'Your score is ' + this.score + '!';
+                message2 = 'Your score is ' + this.score + ' and time ' + formattedTime + '!';
             } else {
                 message1 = 'You lose!';
-                message2 = 'Try again!';
+                message2 = 'Try again! You lasted ' + formattedTime + '!';
             }
             context.font = '100px Impact';
             context.fillText(message1, this.width * 0.5, 200);
@@ -152,6 +157,7 @@ export class Game {
 
     restart() {
         this.sound.mainSound();
+        this.gameTime = 0;
         this.projectilePool = [];
         this.createprojectilePool();
         this.enemyPool = [];
