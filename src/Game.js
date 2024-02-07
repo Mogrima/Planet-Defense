@@ -28,6 +28,8 @@ export class Game {
         this.spriteInterval = 150;
 
         this.score = 0;
+        this.winningScore = 10;
+        this.gameOver = false;
 
         this.mouse = {
             x: 0,
@@ -65,13 +67,15 @@ export class Game {
             enemy.update();
         })
 
-        if (this.enemyTimer < this.enemyInterval) {
-            this.enemyTimer += deltaTime;
-        } else {
-            this.enemyTimer = 0;
-            const enemy = this.getEnemy();
-            if (enemy) enemy.start();
-            
+        if (!this.gameOver) {
+            if (this.enemyTimer < this.enemyInterval) {
+                this.enemyTimer += deltaTime;
+            } else {
+                this.enemyTimer = 0;
+                const enemy = this.getEnemy();
+                if (enemy) enemy.start();
+                
+            }
         }
 
         if (this.spriteTimer < this.spriteInterval) {
@@ -80,6 +84,10 @@ export class Game {
         } else {
             this.spriteUpdate = true;
             this.spriteTimer = 0;
+        }
+
+        if (this.score >= this.winningScore) {
+            this.gameOver = true;
         }
     }
 
