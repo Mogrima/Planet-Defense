@@ -118,7 +118,12 @@ export class Game {
 
     drawStatusText(context) {
         context.save();
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 2;
+        context.shadowColor = 'black';
+        context.shadowBlur = 10;
         context.textAlign = 'left';
+        context.fillStyle = '#08e8de';
         context.font = '30px Impact';
         const formattedTime = (this.gameTime * 0.001).toFixed(1);
         context.fillText('Score: ' + this.score, 20, 30);
@@ -127,7 +132,7 @@ export class Game {
         }
         context.save();
         this.laser ? context.fillStyle = 'gold' :
-            context.fillStyle = 'white';
+            context.fillStyle = '#08e8de';
         for (let i = 0; i < this.energy; i++) {
             context.fillRect(20 + 2 * i, 110, 2, 25);
         }
