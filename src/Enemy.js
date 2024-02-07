@@ -32,7 +32,8 @@ export class Enemy {
 
     draw(context) {
         if (!this.free) {
-            context.drawImage(this.image, 0, 0, this.width, this.height, 
+            context.drawImage(this.image, 0, this.frameY * this.height,
+                this.width, this.height, 
                 this.x - this.radius, this.y - this.radius, this.width, this.height);
             if (this.game.debug) {
                 context.beginPath();
