@@ -93,7 +93,7 @@ export class Enemy {
             }
             if (this.frameX > this.maxFrame) {
                 this.reset();
-                if (!this.collided) this.game.score += this.maxLives;
+                if (!this.collided && !this.game.gameOver) this.game.score += this.maxLives;
             }
         }
     }
