@@ -24,6 +24,7 @@ export class Enemy {
         const aim = this.game.calcAim(this, this.game.planet);
         this.speedX = aim[0];
         this.speedY = aim[1];
+        this.lives = this.maxLives;
     }
 
     reset() {

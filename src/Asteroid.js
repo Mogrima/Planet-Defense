@@ -5,6 +5,8 @@ export class Asteroid extends Enemy {
         super(game);
         this.image = document.getElementById('asteroid');
         this.frameY = Math.floor(Math.random() * 4);
+        this.lives = 5;
+        this.maxLives = this.lives;
     }
 
     start() {
