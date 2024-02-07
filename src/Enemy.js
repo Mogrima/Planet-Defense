@@ -66,12 +66,12 @@ export class Enemy {
 
             this.game.projectilePool.forEach(projectile => {
                 if (!projectile.free &&
-                    this.game.checkCollision(this, projectile)) {
+                    this.game.checkCollision(this, projectile) && this.lives >= 1) {
                         projectile.reset();
                         this.hit(1);
                 }
             })
-            if (this.lives < 1) {
+            if (this.lives < 1 && this.game.spriteUpdate) {
                 this.frameX++;
             }
             if (this.frameX > this.maxFrame) this.reset();
