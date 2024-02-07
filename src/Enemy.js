@@ -6,6 +6,7 @@ export class Enemy {
         this.radius = 40;
         this.width = this.radius * 2;
         this.height = this.radius * 2;
+        this.speedModifier = Math.random() * 0.5 + 0.1;
         this.speedX = 0;
         this.speedY = 0;
         this.free = true;
@@ -24,8 +25,8 @@ export class Enemy {
             this.y = Math.random() * this.game.height
         }
         const aim = this.game.calcAim(this, this.game.planet);
-        this.speedX = aim[0];
-        this.speedY = aim[1];
+        this.speedX = aim[0] * this.speedModifier;
+        this.speedY = aim[1] * this.speedModifier;
         this.frameX = 0;
         this.lives = this.maxLives;
         this.angle = Math.atan2(aim[3], aim[2]) + Math.PI * 0.5;
