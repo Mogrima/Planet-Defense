@@ -27,6 +27,8 @@ export class Game {
         this.spriteTimer = 0;
         this.spriteInterval = 150;
 
+        this.score = 0;
+
         this.mouse = {
             x: 0,
             y: 0
