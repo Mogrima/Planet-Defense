@@ -63,11 +63,13 @@ export class Enemy {
             this.y += this.speedY;
 
             if (this.game.checkCollision(this, this.game.planet)) {
-                this.reset();
+                this.lives = 0;
+                this.speedX = 0;
+                this.speedY = 0;
             }
 
             if (this.game.checkCollision(this, this.game.player)) {
-                this.reset();
+                this.lives = 0;
             }
 
             this.game.projectilePool.forEach(projectile => {
