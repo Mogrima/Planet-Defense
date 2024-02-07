@@ -34,7 +34,7 @@ export class Game {
         this.spriteInterval = 150;
 
         this.score = 0;
-        this.winningScore = 50;
+        this.winningScore = 100;
         this.gameOver = false;
         this.lives = 10;
 
