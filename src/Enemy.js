@@ -10,11 +10,12 @@ export class Enemy {
         this.speedY = 0;
         this.free = true;
         this.angle = 0;
+        this.collided = false;
     }
 
     start() {
         this.free = false;
-       
+        this.collided = false;
         if (Math.random() < 0.5) {
             this.x = Math.random() * this.game.width
             this.y = Math.random() < 0.5 ? -this.radius : this.game.height + this.radius
@@ -67,10 +68,12 @@ export class Enemy {
                 this.lives = 0;
                 this.speedX = 0;
                 this.speedY = 0;
+                this.collided = true;
             }
 
             if (this.game.checkCollision(this, this.game.player)) {
                 this.lives = 0;
+                this.collided = true;
             }
 
             this.game.projectilePool.forEach(projectile => {
@@ -83,7 +86,10 @@ export class Enemy {
             if (this.lives < 1 && this.game.spriteUpdate) {
                 this.frameX++;
             }
-            if (this.frameX > this.maxFrame) this.reset();
+            if (this.frameX > this.maxFrame) {
+                this.reset();
+                if (!this.collided) this.game.score += this.maxLives;
+            }
         }
     }
 }
