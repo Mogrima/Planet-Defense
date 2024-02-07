@@ -5,6 +5,7 @@ import { Asteroid } from './Asteroid.js';
 import { Lobstermorph } from './Lobstermorph.js';
 import { Beetlemorph } from './Beetlemorph.js';
 import { Rhinomorph } from './Rhinomorph.js';
+import { SoundController } from './SoundController.js';
 
 export class Game {
     constructor(canvas) {
@@ -14,6 +15,8 @@ export class Game {
 
         this.planet = new Planet(this);
         this.player = new Player(this);
+        this.sound = new SoundController();
+        this.sound.mainSound();
 
         this.projectilePool = [];
         this.numberOfProjectiles = 30;
