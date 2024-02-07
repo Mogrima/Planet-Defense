@@ -24,6 +24,7 @@ export class Enemy {
         const aim = this.game.calcAim(this, this.game.planet);
         this.speedX = aim[0];
         this.speedY = aim[1];
+        this.frameX = 0;
         this.lives = this.maxLives;
     }
 
@@ -33,7 +34,8 @@ export class Enemy {
 
     draw(context) {
         if (!this.free) {
-            context.drawImage(this.image, 0, this.frameY * this.height,
+            context.drawImage(this.image,
+                this.frameX * this.width, this.frameY * this.height,
                 this.width, this.height, 
                 this.x - this.radius, this.y - this.radius, this.width, this.height);
             if (this.game.debug) {
