@@ -60,6 +60,7 @@ export class Game {
 
         window.addEventListener('keyup', e => {
             if (e.key === 'd') this.debug = !this.debug;
+            if (e.key === '1') this.player.shoot();
             if (this.restartKeys.includes(e.key) &&
             this.gameOver ) this.restart();
         });
