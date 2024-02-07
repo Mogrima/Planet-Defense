@@ -7,7 +7,7 @@ export class Asteroid extends Enemy {
         this.frameX = 0;
         this.frameY = Math.floor(Math.random() * 4);
         this.maxFrame = 7;
-        this.lives = 5;
+        this.lives = 1;
         this.maxLives = this.lives;
     }
 
