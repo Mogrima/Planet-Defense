@@ -30,6 +30,7 @@ export class Game {
         this.score = 0;
         this.winningScore = 10;
         this.gameOver = false;
+        this.lives = 5;
 
         this.mouse = {
             x: 0,
@@ -97,6 +98,9 @@ export class Game {
         context.textAlign = 'left';
         context.font = '30px Impact';
         context.fillText('Score: ' + this.score, 20, 30);
+        for (let i = 0; i < this.lives; i++) {
+            context.fillRect(20 + 15 * i, 60, 10, 30);
+        }
         if (this.gameOver) {
             context.textAlign = 'center';
             let message1;
