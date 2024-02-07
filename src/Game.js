@@ -112,7 +112,6 @@ export class Game {
         context.textAlign = 'left';
         context.font = '30px Impact';
         const formattedTime = (this.gameTime * 0.001).toFixed(1);
-        context.fillText('Timer: ' + formattedTime, 20, 120);
         context.fillText('Score: ' + this.score, 20, 30);
         for (let i = 0; i < this.lives; i++) {
             context.fillRect(20 + 15 * i, 60, 10, 30);
