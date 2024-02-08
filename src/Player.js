@@ -33,7 +33,7 @@ export class Player {
 
     shoot() {
         const projectile = this.game.getProjectile();
-        if (projectile) {
+        if (projectile && this.aim) {
             projectile.start(this.x + this.radius * this.aim[0],
                 this.y + this.radius * this.aim[1], this.aim[0], this.aim[1]);
             this.game.sound.shotPlayer();
