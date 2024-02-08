@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Workbench';
+    src: url('./fonts/Workbench-Regular.eot');
+    src: url('./fonts/Workbench-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Workbench-Regular.woff2') format('woff2'),
+        url('./fonts/Workbench-Regular.woff') format('woff'),
+        url('./fonts/Workbench-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     background-color: #191970;
 }
