@@ -1,4 +1,4 @@
-import Volume from "./Settings.js";
+import Volume from './Settings.js';
 
 export class SoundController {
     constructor() {
