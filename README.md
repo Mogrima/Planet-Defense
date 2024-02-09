@@ -3,6 +3,7 @@
 <img src="https://img.shields.io/badge/HTML5-004524?style=for-the-badge&logo=html5&logoColor=#E34F26" alt="HTML5">
 <img src="https://img.shields.io/badge/CSS3-004524?style=for-the-badge&logo=css3&logoColor=#E34F26" alt="css3">
 
+## About
 Анализ прошел успешно: контакт с врагом подтвержден. Похоже наши лазары запускают клеточный митоз у этого вида. Что это значит? Если мы выстрелим в них, они разделяться на множество более мелких существ. Значит, сначала мы должны разделить их и нацелиться на клонов. Атакующие монстры все пребывают и единственное, что нам остается, это уничтожить их с помощью супер-лазера. Для этого, нам надо продержаться до его полной зарядки, чтобы уничтожить всех врагов разом. Лазер заряжется от высвободившейся энергии от уничтоженных врагов, он захватывает ее из открытого космоса и перенаправляет в свою батарею. Поэтому нам надо как можно быстрее и больше уничтожить монстров, стремящихся к нашей планете.
 
 ## Demo
@@ -26,10 +27,10 @@
 
 ![Изображение][14]
 
-## Управление
+## Control
 Космический корабль перемещается вокруг планеты при помощи мыши, стрельба осуществляется при нажатии левой кнопки мыши или на клавишу '1'.
 
-## Как поиграть
+## How to play
 1. Открыть игру в браузере можно по [ссылке](https://mogrima.github.io/Planet-Defense/)
 2. Или скачать архив с игрой из репозитория. Для того, чтобы запустить игру локально:
   * Убедиться, что на ПК установлена node.js
@@ -38,6 +39,21 @@
   * Если страница браузера не откроется автоматически, это можно сделать самостоятельно, просто указав в адресной строке: ```http://127.0.0.1:8125/```
 
 ## Acknowledgments
+Lessons and support:
+
+<img src="https://img.shields.io/badge/Franks laboratory -ffd700?style=for-the-badge&logo=youtube&logoColor=#FF0000" alt="Franks laboratory ">
+
+Sounds:
+
+<img src="https://img.shields.io/badge/DavidKBD -ffd700?style=for-the-badge&logo=itchdotio&logoColor=#FA5C5C" alt="DavidKBD "> <img src="https://img.shields.io/badge/Yo Frankie! -ffd700?style=for-the-badge&logo=itchdotio&logoColor=#FA5C5C" alt="Yo Frankie! "> <img src="https://img.shields.io/badge/NenadSimic -ffd700?style=for-the-badge&logo=itchdotio&logoColor=#FA5C5C" alt="NenadSimic "> <img src="https://img.shields.io/badge/SFX 1 Wrong Choice -ffd700?style=for-the-badge&logo=itchdotio&logoColor=#FA5C5C" alt="SFX 1 Wrong Choice "> <img src="https://img.shields.io/badge/Franks laboratory -ffd700?style=for-the-badge&logo=youtube&logoColor=#FF0000" alt="Franks laboratory ">
+
+Sprites and background:
+
+<img src="https://img.shields.io/badge/Franks laboratory -ffd700?style=for-the-badge&logo=youtube&logoColor=#FF0000" alt="Franks laboratory ">
+
+## License
+
+Unlicense
 
 [1]:https://github.com/Mogrima/Planet-Defense/blob/master/Assets/preview/preview.png
 [2]:Assets/preview/enemy1.png
