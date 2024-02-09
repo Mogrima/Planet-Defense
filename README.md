@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/CSS3-004524?style=for-the-badge&logo=css3&logoColor=#E34F26" alt="css3">
 
 ## Как поиграть
-1. Открыть игру в браузере можно по [ссылке](https://mogrima.github.io/Bullseye/)
+1. Открыть игру в браузере можно по [ссылке](https://mogrima.github.io/Planet-Defense/)
 2. Или скачать архив с игрой из репозитория. Для того, чтобы запустить игру локально:
   * Убедиться, что на ПК установлена node.js
   * Открыть консоль в корне проекта и набрать команду:
