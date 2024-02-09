@@ -39,17 +39,17 @@
 
 ## Acknowledgments
 
-[1]:https://github.com/Mogrima/Planet-Defense/blob/master/Assets/preview.png
-[2]:Assets/enemy1.png
-[3]:Assets/enemy2.png
-[4]:Assets/enemy3.png
-[5]:Assets/enemy4.png
-[6]:Assets/enemy5.png
-[7]:Assets/enemy6.png
-[8]:Assets/enemy7.png
-[9]:Assets/enemy8.png
-[10]:Assets/enemy9.png
-[11]:Assets/enemy10.png
-[12]:Assets/enemy11.png
-[13]:Assets/enemy12.png
-[14]:Assets/enemy13.png
+[1]:https://github.com/Mogrima/Planet-Defense/blob/master/Assets/preview/preview.png
+[2]:Assets/preview/enemy1.png
+[3]:Assets/preview/enemy2.png
+[4]:Assets/preview/enemy3.png
+[5]:Assets/preview/enemy4.png
+[6]:Assets/preview/enemy5.png
+[7]:Assets/preview/enemy6.png
+[8]:Assets/preview/enemy7.png
+[9]:Assets/preview/enemy8.png
+[10]:Assets/preview/enemy9.png
+[11]:Assets/preview/enemy10.png
+[12]:Assets/preview/enemy11.png
+[13]:Assets/preview/enemy12.png
+[14]:Assets/preview/enemy13.png
